@@ -1,5 +1,6 @@
 const http = require('http')
 const fs = require('fs')
+const path=require('path')
 // const PORT = 4200;
 
 
@@ -16,6 +17,13 @@ const fs = require('fs')
 
 // fs.writeFileSync("newTask.txt","Hey, I'm Chetan.")
 
-const tasks=fs.readFileSync("newTask.txt",'utf-8')
-const taskList=tasks.split('\n')
-console.log(taskList);
+// const tasks=fs.readFileSync("newTask.txt",'utf-8')
+// const taskList=tasks.split('\n')
+// console.log(taskList);
+
+// fs.writeFileSync("newFile.txt","hey,I'm newFile")
+
+const PATH=path.basename("newFile.txt")
+// fs.appendFileSync(PATH, "\n" + "hey new file")
+fs.unlinkSync(PATH)
+console.log("Unlink file successfull")
